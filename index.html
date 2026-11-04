@@ -44,7 +44,7 @@
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 html{scroll-padding-top:80px;overflow-x:clip}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);font-stretch:100%;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);font-stretch:100%;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit}
@@ -142,10 +142,10 @@ h1,h2,h3{margin:0;font-weight:800}
 /* Story */
 .story{background:var(--bg-2);border-block:1px solid var(--line)}
 .story-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(40px,6vw,104px);align-items:start}
-.story-aside{position:sticky;top:110px}
+.story-aside{position:sticky;top:104px}
 .story h2{font-size:clamp(40px,5.6vw,84px)}
 .story h2 span{color:var(--hl)}
-.story-photo{position:relative;margin:clamp(32px,4vw,48px) 12px 12px 0;max-width:360px}
+.story-photo{position:relative;margin:clamp(28px,3.5vw,44px) 12px 12px 0;max-width:min(360px,calc((100svh - 400px) * .8))}
 .story-photo::before{content:"";position:absolute;inset:12px -12px -12px 12px;border:1px solid var(--accent)}
 .story-photo img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
 .story-open{font-size:clamp(22px,2.2vw,30px);line-height:1.35;letter-spacing:-.015em;font-weight:500;margin-bottom:clamp(40px,5vw,64px)}
