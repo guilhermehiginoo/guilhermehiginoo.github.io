@@ -121,6 +121,29 @@ h1,h2,h3{margin:0;font-weight:800}
 .about-photo{margin:0;position:relative;align-self:start;max-width:420px}
 .about-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
 .about-photo figcaption{margin-top:12px;color:var(--muted)}
+/* Story */
+.story{background:var(--bg-2);border-block:1px solid var(--line)}
+.story-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(40px,6vw,104px);align-items:start}
+.story-aside{position:sticky;top:110px}
+.story h2{font-size:clamp(40px,5.6vw,84px)}
+.story h2 span{color:var(--hl)}
+.story-photo{position:relative;margin:clamp(32px,4vw,48px) 12px 12px 0;max-width:360px}
+.story-photo::before{content:"";position:absolute;inset:12px -12px -12px 12px;border:1px solid var(--accent)}
+.story-photo img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
+.story-open{font-size:clamp(22px,2.2vw,30px);line-height:1.35;letter-spacing:-.015em;font-weight:500;margin-bottom:clamp(40px,5vw,64px)}
+.story-open em{font-style:normal;color:var(--hl)}
+.chapters{--p:0;position:relative;margin:0;padding:0 0 0 44px;list-style:none;display:grid;gap:clamp(36px,4.5vw,56px)}
+.chapters::before,.chapters::after{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.chapters::after{background:var(--hl);transform:scaleY(var(--p));transform-origin:top}
+.ch{position:relative}
+.ch::before{content:"";position:absolute;left:-44px;top:4px;width:16px;height:16px;border:2px solid var(--line);background:var(--bg-2);z-index:1;transition:background .4s,border-color .4s}
+.ch.on::before{border-color:var(--hl);background:var(--hl)}
+.ch .when{color:var(--hl)}
+.ch h3{font-size:clamp(22px,2.2vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:8px 0 10px}
+.ch p{color:var(--fg-2);font-size:clamp(17px,1.4vw,19px);line-height:1.65;max-width:56ch}
+.ch.last h3{color:var(--hl)}
+@media (max-width:980px){.story-grid{grid-template-columns:minmax(0,1fr)}.story-aside{position:static}.story-photo{max-width:320px}}
+@media (max-width:600px){.story .label span+span{display:none}.chapters{padding-left:34px}.chapters::before,.chapters::after{left:6px}.ch::before{left:-34px;width:14px;height:14px}}
 /* Courses */
 .edu{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:clamp(32px,5vw,80px);align-items:start}
 .edu h2{font-size:clamp(36px,4.6vw,64px);font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:.95}
@@ -242,7 +265,7 @@ h1,h2,h3{margin:0;font-weight:800}
   <div class="wrap nav-in">
     <a class="brand" href="#inicio">Higino<sup>®</sup></a>
     <nav class="menu" aria-label="Seções">
-      <a href="#sobre">Sobre</a><a href="#projetos">Projetos<small>(05)</small></a><a href="#experiencia">Experiência<small>(04)</small></a><a href="#stack">Stack</a><a href="#contato">Contato</a>
+      <a href="#sobre">Sobre</a><a href="#historia">História</a><a href="#projetos">Projetos<small>(05)</small></a><a href="#experiencia">Experiência<small>(04)</small></a><a href="#stack">Stack</a><a href="#contato">Contato</a>
     </nav>
     <a class="cv" href="https://www.linkedin.com/in/guilhermehiginoo/" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg><span>LinkedIn</span></a>
   </div>
@@ -295,7 +318,30 @@ h1,h2,h3{margin:0;font-weight:800}
     </div>
   </section>
 
-  <section class="wrap sec" id="projetos" style="padding-top:0">
+  <section class="story" id="historia">
+    <div class="wrap sec">
+      <div class="label mono rv"><span>Minha história</span><span>Guilherme Higino de Araújo Silva</span></div>
+      <div class="story-grid">
+        <div class="story-aside">
+          <h2 class="big rv">Como tudo<br>começou<span>.</span></h2>
+          <figure class="story-photo rv"><img src="images/guilherme-higino-retrato.webp" width="880" height="1010" alt="Guilherme Higino sorrindo, de óculos e camiseta preta, com uma luz azul atrás" loading="lazy"></figure>
+        </div>
+        <div>
+          <p class="story-open rv">Sempre fui o curioso da casa. Quando algo não funcionava, eu ia atrás da solução, quase sempre num tutorial do YouTube. <em>Sem perceber, eu já estava aprendendo a resolver problemas.</em></p>
+          <ol class="chapters" id="chapters">
+            <li class="ch rv"><span class="when mono">01 · Pandemia</span><h3>Aos 14 anos</h3><p>Na pandemia, um amigo me chamou para uma Imersão da Alura. Foi meu primeiro contato com HTML, CSS e JavaScript, e ali eu já sabia: queria ser dev.</p></li>
+            <li class="ch rv"><span class="when mono">02 · 2024</span><h3>IMD, UFRN</h3><p>Em 2024 entrei em Tecnologia da Informação no IMD, na UFRN.</p></li>
+            <li class="ch rv"><span class="when mono">03 · 2024</span><h3>Primeiro estágio</h3><p>Logo depois veio meu primeiro estágio, automatizando processos com n8n e ligando sistemas à OpenAI. Uso o n8n até hoje, quando ele é a ferramenta certa para o problema.</p></li>
+            <li class="ch rv"><span class="when mono">04 · 2025</span><h3>Uma base sólida</h3><p>Eu queria dominar uma linguagem de verdade. Fiz o curso de PHP e Laravel da Pinguim Academy e saí com uma base muito forte de arquitetura no framework.</p></li>
+            <li class="ch rv"><span class="when mono">05 · 2025</span><h3>De volta ao IMD</h3><p>Tive a sorte de voltar ao IMD por outra porta: a Jupit, negócio em que sou CTO e dev full stack, foi aceita na pré-incubação do Metrópole Parque. Ainda estamos no começo, e é lá que eu aprendo na prática a transformar código em produto.</p></li>
+            <li class="ch last rv"><span class="when mono">06 · Hoje</span><h3>Agora</h3><p>Ainda acho incrível pedir algo para a máquina e ela fazer. Com a IA, tudo ficou mais interessante, e por isso estou estudando a engenharia por trás dela.</p></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="projetos">
     <h2 class="big work-title rv">Projetos<span>.</span></h2>
     <div class="rows">
       <article class="row rv" tabindex="0">
@@ -465,6 +511,18 @@ h1,h2,h3{margin:0;font-weight:800}
       if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); pick(tabs[(i - 1 + tabs.length) % tabs.length], true); }
     });
   });
+
+  // Story timeline: fill the line and light each dot as the reader passes it
+  var ol = document.getElementById('chapters');
+  if (ol) {
+    var chs = [].slice.call(ol.querySelectorAll('.ch'));
+    var tick = function(){
+      var r = ol.getBoundingClientRect(), mid = innerHeight * 0.6;
+      ol.style.setProperty('--p', Math.max(0, Math.min(1, (mid - r.top) / r.height)).toFixed(3));
+      chs.forEach(function(c){ c.classList.toggle('on', c.getBoundingClientRect().top < mid); });
+    };
+    addEventListener('scroll', tick, {passive:true}); addEventListener('resize', tick); tick();
+  }
 
   // Copy e-mail
   var btn = document.getElementById('copy'), label = document.getElementById('copy-l'), mail = document.getElementById('email');
