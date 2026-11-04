@@ -1,13 +1,15 @@
 # guilhermehigino.dev
 
-Site pessoal de Guilherme Higino de Araújo Silva. Página estática (HTML e CSS), publicada no GitHub Pages em https://guilhermehiginoo.github.io.
+Personal site of Guilherme Higino de Araújo Silva. A static page (HTML and CSS) hosted on GitHub Pages at https://guilhermehiginoo.github.io.
 
-## Estrutura
+The code is in English; the visible copy is in Brazilian Portuguese.
 
-- `index.html`: a página inteira (estilos e scripts embutidos).
-- `images/`: fotos em WebP, imagem de preview de link (`guilherme-higino-og.jpg`) e favicon.
-- `robots.txt` e `sitemap.xml`: para o Google encontrar e indexar o site.
+## Structure
 
-## Rodar local
+- `index.html`: the whole page, with inline styles and scripts.
+- `images/`: WebP photos, the link preview image (`guilherme-higino-og.jpg`) and the favicon.
+- `robots.txt` and `sitemap.xml`: help search engines find and index the site.
 
-`python3 -m http.server 8000` nesta pasta e acesse http://localhost:8000.
+## Run locally
+
+Run `python3 -m http.server 8000` in this folder and open http://localhost:8000.
